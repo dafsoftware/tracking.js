@@ -52,11 +52,12 @@
    * Captures the user camera when tracking a video element and set its source
    * to the camera stream.
    * @param {HTMLVideoElement} element Canvas element to track.
-   * @param {object} opt_options Optional configuration to the tracker.
+   * @param {object} 
+   _options Optional configuration to the tracker.
    */
   tracking.initUserMedia_ = function(element, opt_options) {
     window.navigator.mediaDevices.getUserMedia({
-      video: (opt_options && opt_options.hasOwnProperty('video')) ? opt_options.video : false,
+      video: (opt_options && opt_options.hasOwnProperty('video')) ? opt_options.video : true,
       audio: (opt_options && opt_options.audio) ? true : false,
     }).then(function(stream) {
       element.srcObject = stream;
